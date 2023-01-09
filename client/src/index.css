@@ -1,13 +1,64 @@
 body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #141414;
+  color: white;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.hello-animation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #141414;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  letter-spacing: 10px;
 }
+
+.hello-animation-text {
+  width: 16ch;
+  font-weight: 100;
+  white-space: nowrap;  /* не переносить текст на другую строку */
+  overflow: hidden; /* скрываем переполнение контентом */
+  border-right: 3px solid white; /* рисуем курсор */
+  animation: cursor 0.75s step-end infinite,
+  printed_text 0.8s steps(100),
+  hide 1s ease 2s;
+}
+
+.map {
+  
+}
+
+@keyframes cursor {
+  0%{
+    border-color: white;
+  }
+
+  50%{
+    border-color: transparent;
+  }
+
+  100%{
+      border-color: white;
+  }
+}
+
+@keyframes printed_text {
+  from{
+      width: 0;
+  }
+}
+
+@keyframes hide{
+  0%{
+      opacity:1;
+  }
+  100% {
+      opacity:0;
+  }
+  }
+  
